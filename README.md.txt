@@ -1,22 +1,34 @@
-# 2D Platformer Game
+# 2D Платформер
 
-A simple 2D platformer using HTML5 Canvas & JavaScript.
+![Game Screenshot](screenshot.png)
 
-## 🎮 Controls
-- Arrow Left/Right — move
-- Space — jump
+Простая 2D игра в жанре платформер, созданная на чистом JavaScript с использованием HTML5 Canvas.
 
-## 🚀 Features
-- Gravity and jumping
-- Platform collision
-- Camera follows the player
-- Clean and readable code
+## 🎮 Демо
 
-## 🛠 Tech
-HTML • CSS • JavaScript (Canvas API)
+[Играть онлайн] https://sutoraiku90210-pixel.github.io/platformer-game/
 
-## ▶️ How to Run
-Open index.html in your browser.
+## ✨ Особенности
 
-## 📷 Screenshot
-Add screenshot.png here
+- Плавное управление персонажем
+- Параллакс-скроллинг фона
+- Система анимаций
+- Сбор предметов и бонусов
+- Несколько уровней сложности
+- Адаптивный дизайн
+
+## 🎯 Управление
+
+- **Стрелка влево/вправо** - движение
+- **Пробел** - прыжок
+- **Shift** - бег
+- **P** - пауза
+- **R** - рестарт уровня
+
+## 🚀 Быстрый старт
+
+### Локальный запуск
+
+1. Клонируйте репозиторий:
+```bash
+https://sutoraiku90210-pixel.github.io/platformer-game/
