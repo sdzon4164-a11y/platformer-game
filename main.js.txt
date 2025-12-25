@@ -1,0 +1,62 @@
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+const player = {
+  x: 50,
+  y: 300,
+  width: 40,
+  height: 50,
+  speed: 4,
+  yVelocity: 0,
+  onGround: false
+};
+const keys = {};
+
+document.addEventListener("keydown", (e) => {
+  keys[e.code] = true;
+});
+
+document.addEventListener("keyup", (e) => {
+  keys[e.code] = false;
+});
+function movePlayer() {
+  if (keys["ArrowRight"]) {
+    player.x += player.speed;
+  }
+
+  if (keys["ArrowLeft"]) {
+    player.x -= player.speed;
+  }
+}
+function physics() {
+  player.yVelocity += 0.6; // гравитация
+  player.y += player.yVelocity;
+
+  // земля
+  if (player.y + player.height >= 400) {
+    player.y = 400 - player.height;
+    player.yVelocity = 0;
+    player.onGround = true;
+  } else {
+    player.onGround = false;
+  }
+
+  // прыжок
+  if (keys["Space"] && player.onGround) {
+    player.yVelocity = -12;
+  }
+}
+function drawPlayer() {
+  ctx.fillStyle = "red";
+  ctx.fillRect(player.x, player.y, player.width, player.height);
+}
+function gameLoop() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  movePlayer();
+  physics();
+  drawPlayer();
+
+  requestAnimationFrame(gameLoop);
+}
+
+gameLoop();
